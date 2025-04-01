@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft-Style Voxel Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.159.0/examples/jsm/",
+            "simplex-noise": "https://cdn.jsdelivr.net/npm/simplex-noise@4.0.1/dist/esm/simplex-noise.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="hud">
+            <div id="crosshair">+</div>
+            <div id="selected-block"></div>
+            <div id="debug-info"></div>
+        </div>
+        <div id="inventory-ui" class="hidden">
+            <div id="inventory-grid"></div>
+            <button id="close-inventory">Close</button>
+        </div>
+        <div id="menu-ui" class="hidden">
+            <h2>Game Menu</h2>
+            <button id="resume-game">Resume</button>
+            <button id="save-game">Save Game</button>
+            <button id="load-game">Load Game</button>
+            <div id="settings">
+                <h3>Settings</h3>
+                <div class="setting">
+                    <label for="render-distance">Render Distance: <span id="render-distance-value">4</span></label>
+                    <input type="range" id="render-distance" min="2" max="10" value="4">
+                </div>
+            </div>
+        </div>
+        <div id="mobile-controls" class="hidden">
+            <div id="movement-pad"></div>
+            <div id="action-buttons">
+                <button id="jump-button">Jump</button>
+                <button id="place-button">Place</button>
+                <button id="break-button">Break</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
